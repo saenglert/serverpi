@@ -1,9 +1,5 @@
 version: "3"
 
-secrets:
-  webpassword:
-    external: true
-
 # More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
 services:
   pihole:
@@ -18,7 +14,7 @@ services:
     environment:
       VIRTUAL_HOST: 'pihole.serverpi4.local'
       TZ: 'Europe/Busingen'
-      WEBPASSWORD: '/run/secrets/webpassword'
+      WEBPASSWORD: '${WEBPASSWORD}'
       FTLCONF_REPLY_ADDR4: '192.168.178.27'
       ADMIN_EMAIL: 'pihole@englerts.de'
       # Uncensored DNS provided by Digital Courage and OpenNIC 
