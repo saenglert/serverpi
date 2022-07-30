@@ -16,13 +16,13 @@ services:
       - "53:53/udp"
       - "80:80/tcp"
     environment:
-      - VIRTUAL_HOST: 'pihole.serverpi4.local'
-      - TZ: 'Europe/Busingen'
-      - WEBPASSWORD: '/run/secrets/webpassword'
-      - FTLCONF_REPLY_ADDR4: '192.168.178.27'
-      - ADMIN_EMAIL: 'pihole@englerts.de'
+      VIRTUAL_HOST: 'pihole.serverpi4.local'
+      TZ: 'Europe/Busingen'
+      WEBPASSWORD: '/run/secrets/webpassword'
+      FTLCONF_REPLY_ADDR4: '192.168.178.27'
+      ADMIN_EMAIL: 'pihole@englerts.de'
       # Uncensored DNS provided by Digital Courage and OpenNIC 
-      - PIHOLE_DNS: '5.9.164.112;195.10.195.195 '
+      PIHOLE_DNS: '5.9.164.112;195.10.195.195 '
     volumes:
       - './etc-pihole:/etc/pihole'
       - './etc-dnsmasq.d:/etc/dnsmasq.d'
